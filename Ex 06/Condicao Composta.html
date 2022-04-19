@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #000;
+        color: #fff;
+        font: normal 16pt arial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input {
+        width: 200px;
+        height: 25px;
+        font-size: 16px;
+        border-radius: 10px;
+        padding-left: 10px;
+        outline: none;
+        border: none;
+        margin: 10px 0;
+      }
+
+      button {
+        width: 100px;
+        height: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 10px;
+        outline: none;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sistema de Brasileiros</h1>
+    <label for="vel">Vive em qual cidade ?</label>
+    <input id="vel" />
+    <button type="submit" onclick="calc()">Verificar</button>
+
+    <div id="result"></div>
+  </body>
+
+  <script>
+    let pais = document.querySelector("#vel");
+    let result = document.querySelector("#result");
+
+    function calc() {
+      if (pais.value == "Brasil" || pais.value == "brasil") {
+        result.innerHTML = "<p>Você é Brasileiro!</p>";
+      } else {
+        result.innerHTML = "<p>Você é Estrangeiro!</p>";
+      }
+
+      result.innerHTML += `<p>Vivendo atualmente em ${pais.value}</p>`;
+    }
+  </script>
+</html>
